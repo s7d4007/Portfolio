@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souvik Dutta - Computer Science Student and Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Souvik Dutta, a software developer specializing in modern web technologies.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Set Tailwind dark mode strategy
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {},
+            },
+        };
+    </script>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold text-gray-900 dark:text-white">
+                        Souvik Dutta
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-4">
+                    <a href="#skills" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 focus-ring">Skills</a>
+                    <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 focus-ring">Projects</a>
+                    <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 focus-ring">Contact</a>
+                    
+                    <!-- Theme Switcher -->
+                    <div class="relative">
+                        <select id="theme-switcher" aria-label="Select theme" class="appearance-none pl-3 pr-8 py-2 rounded-md text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 focus-ring cursor-pointer">
+                            <option value="system">System</option>
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                        </select>
+                        <i class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-gray-400 pointer-events-none"></i>
+                    </div>
+
+                    <!-- Resume Download Button -->
+                    <a href="resume.pdf" download="Souvik Dutta_Resume.pdf" class="group relative inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus-ring overflow-hidden">
+                        <span class="absolute left-0 top-0 h-full w-0 bg-blue-800 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        <span class="relative flex items-center">
+                            <i class="fa-solid fa-download mr-0 sm:mr-2 transition-transform duration-300 group-hover:sm:-translate-y-5"></i>
+                            <i class="fa-solid fa-file-pdf absolute right-2 translate-y-5 opacity-0 transition-transform duration-300 group-hover:translate-y-0 group-hover:opacity-100"></i>
+                            <span class="hidden sm:inline">Resume</span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" aria-label="Open menu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 focus-ring">
+                        <i id="menu-icon-open" class="fa-solid fa-bars h-6 w-6"></i>
+                        <i id="menu-icon-close" class="fa-solid fa-times h-6 w-6 hidden"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="md:hidden hidden pb-3 space-y-1">
+            <a href="#skills" class="block px-4 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800">Skills</a>
+            <a href="#projects" class="block px-4 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800">Projects</a>
+            <a href="#contact" class="block px-4 py-2 rounded-md text-base font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800">Contact</a>
+            <a href="resume.pdf" download="Souvik Dutta_Resume.pdf" class="block px-4 py-2 rounded-md text-base font-medium text-blue-600 dark:text-blue-400 hover:bg-gray-200 dark:hover:bg-gray-800">
+                <i class="fa-solid fa-download mr-2"></i>Download Resume
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center text-center overflow-hidden py-24 px-4">
+            <!-- Animated Background -->
+            <!-- This div is for Vanta.js -->
+            <div id="vanta-bg" class="absolute inset-0 z-0"></div>
+            <!-- This is the CSS-only fallback -->
+            <div id="vanta-fallback" class="absolute inset-0 z-0 hidden overflow-hidden">
+                <div class="blob-animation top-1/4 left-1/4 bg-blue-300 dark:bg-blue-900"></div>
+                <div class="blob-animation blob-2 top-1/2 left-1/2 bg-purple-300 dark:bg-purple-900"></div>
+                <div class="blob-animation blob-3 bottom-1/4 right-1/4 bg-pink-300 dark:bg-pink-900"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 reveal">
+                <img 
+                    src="profile.webp" 
+                    alt="Profile photo of Souvik Dutta" 
+                    class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-lg profile-glow">
+                 <h1 class="mt-8 text-4xl sm:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                    Hi, I'm Souvik Dutta
+                </h1>
+                <p class="mt-4 text-2xl sm:text-3xl font-medium text-blue-600 dark:text-blue-400">
+                    I'm a <span id="typed-text"></span>
+                </p>
+                <p class="mt-6 max-w-xl mx-auto text-lg text-gray-700 dark:text-gray-300">
+                    Based in India, I'm a passionate Computer Science student and developer exploring the exciting worlds of Artificial Intelligence and Software Development.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="inline-block px-8 py-3 rounded-md text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus-ring shadow-lg transform transition-transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="inline-block px-8 py-3 rounded-md text-lg font-medium text-blue-700 dark:text-blue-300 bg-white dark:bg-gray-800 ring-1 ring-blue-600 dark:ring-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus-ring shadow-lg transform transition-transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 bg-white dark:bg-gray-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center reveal">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                        My Tech Stack
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                        Technologies I work with to build modern web solutions.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Frontend Skills -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg reveal">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300">
+                            <i class="fa-solid fa-code text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Frontend</h3>
+                        <ul class="mt-4 space-y-3 text-lg text-gray-600 dark:text-gray-400">
+                            <li class="flex items-center"><i class="fa-brands fa-react w-6 text-blue-500"></i>React</li>
+                            <li class="flex items-center"><i class="fa-brands fa-js w-6 text-yellow-500"></i>JavaScript (ES6+)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-t w-6 text-blue-600"></i>TypeScript</li>
+                            <li class="flex items-center"><i class="fa-brands fa-tailwind w-6 text-cyan-500"></i>Tailwind CSS</li>
+                            <li class="flex items-center"><i class="fa-brands fa-html5 w-6 text-orange-500"></i>HTML5</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Skills -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg reveal" style="transition-delay: 200ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-300">
+                            <i class="fa-solid fa-server text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Backend</h3>
+                        <ul class="mt-4 space-y-3 text-lg text-gray-600 dark:text-gray-400">
+                            <li class="flex items-center"><i class="fa-brands fa-node-js w-6 text-green-500"></i>Node.js</li>
+                            <li class="flex items-center"><i class="fa-solid fa-feather w-6 text-gray-500"></i>Express.js</li>
+                            <li class="flex items-center"><i class="fa-brands fa-python w-6 text-blue-400"></i>Python</li>
+                            <li class="flex items-center"><i class="fa-solid fa-database w-6 text-blue-600"></i>PostgreSQL</li>
+                            <li class="flex items-center"><i class="fa-solid fa-leaf w-6 text-green-600"></i>MongoDB</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Platforms -->
+                    <div class="p-8 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg reveal" style="transition-delay: 400ms;">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300">
+                            <i class="fa-solid fa-tools text-xl"></i>
+                        </div>
+                        <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">Tools & Platforms</h3>
+                        <ul class="mt-4 space-y-3 text-lg text-gray-600 dark:text-gray-400">
+                            <li class="flex items-center"><i class="fa-brands fa-git-alt w-6 text-orange-600"></i>Git & GitHub</li>
+                            <li class="flex items-center"><i class="fa-brands fa-docker w-6 text-blue-500"></i>Docker</li>
+                            <li class="flex items-center"><i class="fa-solid fa-cloud w-6 text-blue-400"></i>Vercel</li>
+                            <li class="flex items-center"><i class="fa-brands fa-figma w-6 text-pink-500"></i>Figma</li>
+                            <li class="flex items-center"><i class="fa-solid fa-code-branch w-6 text-blue-500"></i>VS Code</li>
+                        </ul>
+                    </div>
+                    <!-- END CUSTOMIZE -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center reveal">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                        Projects
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                        Here are a few things I've built.
+                    </p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project cards will be injected here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white dark:bg-gray-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center reveal">
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
+                        Get In Touch
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+                        I'm open to new opportunities and collaborations.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <!-- Left Side: Contact Methods -->
+                    <div class="reveal" style="transition-delay: 200ms;">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Reach Out</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">
+                            The best ways to contact me or find my work.
+                        </p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">                            
+                            <!-- Email Card -->
+                            <button id="copy-email-btn" class="text-left p-6 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl focus-ring">
+                                <i class="fa-solid fa-envelope text-3xl text-blue-600 dark:text-blue-400"></i>
+                                <h4 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">Email</h4>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 truncate">souvikdutta0718@gmail.com</p>
+                                <span class="mt-2 text-xs font-medium text-blue-600 dark:text-blue-400">Click to copy</span>
+                            </button>
+                            
+                            <!-- GitHub Card -->
+                            <a href="https://github.com/s7d4007" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl focus-ring">
+                                <i class="fa-brands fa-github text-3xl text-gray-800 dark:text-white"></i>
+                                <h4 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">GitHub</h4>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 truncate">s7d4007</p>
+                                <span class="mt-2 text-xs font-medium text-blue-600 dark:text-blue-400">View profile <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></span>
+                            </a>
+                            
+                            <!-- LinkedIn Card -->
+                            <a href="https://www.linkedin.com/in/souvik-dutta-244304307" target="_blank" rel="noopener noreferrer" class="block p-6 bg-gray-50 dark:bg-gray-900 rounded-xl shadow-lg transition-transform hover:-translate-y-1 hover:shadow-xl focus-ring">
+                                <i class="fa-brands fa-linkedin text-3xl text-blue-700"></i>
+                                <h4 class="mt-4 text-lg font-semibold text-gray-900 dark:text-white">LinkedIn</h4>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400 truncate">Souvik Dutta</p>
+                                <span class="mt-2 text-xs font-medium text-blue-600 dark:text-blue-400">View profile <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></span>
+                            </a>
+                            <!-- END CUSTOMIZE -->
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Contact Form -->
+                    <div class="reveal" style="transition-delay: 400ms;">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Send Me a Message</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">
+                            Have a project pitch or question?
+                        </p>
+                        <form id="contact-form" action="https://formspree.io/f/[YOUR_FORMSPREE_ID]" method="POST" class="mt-6 space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Name</label>
+                                <input type="text" name="name" id="name" required class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Your Email</label>
+                                <input type="email" name="email" id="email" required class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 rounded-md border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm focus:border-blue-500 focus:ring-blue-500"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" id="form-submit-btn" class="w-full flex justify-center px-6 py-3 rounded-md text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus-ring shadow-lg transform transition-transform hover:scale-105">
+                                    Send Message
+                                </button>
+                            </div>
+                            <p id="form-status" class="text-center text-sm"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="flex flex-col sm:flex-row justify-between items-center">
+                <div class="flex space-x-6">
+                    <a href="https://github.com/s7d4007" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/souvik-dutta-244304307" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fa-brands fa-linkedin text-2xl"></i>
+                    </a>
+                    <!-- END CUSTOMIZE -->
+                </div>
+                <p class="mt-4 sm:mt-0 text-sm text-gray-500 dark:text-gray-400">
+                    &copy; <span id="current-year"></span> Souvik Dutta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="fixed inset-0 bg-gray-900/70 backdrop-blur-sm transition-opacity" aria-hidden="true"></div>
+
+        <!-- Modal Panel -->
+        <div class="relative z-10 w-full max-w-3xl max-h-[90vh] bg-white dark:bg-gray-900 rounded-lg shadow-xl overflow-hidden transition-all">
+            <!-- Modal Header -->
+            <div class="relative h-64 w-full">
+                <img id="modal-image" src="" alt="Project screenshot" class="h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <h3 id="modal-title" class="absolute bottom-4 left-6 text-3xl font-bold text-white"></h3>
+                <button id="modal-close-btn" class="absolute top-4 right-4 p-2 rounded-full bg-black/30 text-white/80 hover:bg-black/50 hover:text-white focus-ring" aria-label="Close modal">
+                    <i class="fa-solid fa-times text-xl w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 overflow-y-auto max-h-[calc(90vh-16rem)]">
+                <div id="modal-tags" class="flex flex-wrap gap-2 mb-4">
+                    <!-- Tags will be injected here -->
+                </div>
+                <div id="modal-details" classs="prose prose-lg dark:prose-invert text-gray-700 dark:text-gray-300">
+                    <!-- Details HTML will be injected here -->
+                </div>
+                <div id="modal-links" class="mt-6 flex flex-wrap gap-4">
+                    <!-- Links will be injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- "Copied to Clipboard" Toast Notification -->
+    <div id="toast" class="fixed bottom-10 right-10 z-50 translate-x-full opacity-0 transition-all duration-300 ease-out bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-5 py-3 rounded-lg shadow-xl">
+        <i class="fa-solid fa-check-circle mr-2"></i>Email copied to clipboard!
+    </div>
+
+    <!-- CDN Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+</body>
+</html>
